@@ -9,13 +9,15 @@ namespace _10453370_POE_WebApp.Models
     {
         [Key]
         public int Venue_ID { get; set; }
+        [Required(ErrorMessage ="Venue Name Is Required")]
         public string? Venue_Name { get; set; }
+        [Required(ErrorMessage = "Venue Location Is Required")]
         public string? Location { get; set; }
 
         
         [Range(1, int.MaxValue, ErrorMessage = "Capacity must be greater than 0.")]
         public int Capacity { get; set; }
-        
+        [Required(ErrorMessage = "Venue Picture Is Required")]
         public string? ImageURL { get; set; }
         [NotMapped]
         public IFormFile? ImageFile { get; set; }

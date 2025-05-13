@@ -7,9 +7,13 @@ namespace _10453370_POE_WebApp.Models
     {
         [Key]
         public int Event_ID { get; set; }
+        [Required(ErrorMessage = "Event Name Is Required")]
         public string? Event_Name { get; set; }
+        [Required(ErrorMessage = "Event Date Is Required")]
         public DateOnly Event_Date { get; set; }
+        [Required(ErrorMessage = "Event Description Is Required")]
         public string? Description { get; set; }
+        
         public int Venue_ID { get; set; }
         [ForeignKey("Venue_ID")]
         public Venue? Venue { get; set; }
